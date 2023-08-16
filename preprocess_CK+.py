@@ -1,5 +1,5 @@
 # create data and label for CK+
-#  0=anger 1=disgust, 2=fear, 3=happy, 4=sadness, 5=surprise, 6=contempt
+#  0=angry 1=disgust, 2=fear, 3=happy, 4=sad, 5=surprise, 6=neutral
 # contain 135,177,75,207,84,249,54 images
 
 import csv
@@ -10,13 +10,13 @@ import skimage.io
 
 ck_path = 'CK+48'
 
-anger_path = os.path.join(ck_path, 'anger')
+anger_path = os.path.join(ck_path, 'angry')
 disgust_path = os.path.join(ck_path, 'disgust')
 fear_path = os.path.join(ck_path, 'fear')
 happy_path = os.path.join(ck_path, 'happy')
-sadness_path = os.path.join(ck_path, 'sadness')
+sadness_path = os.path.join(ck_path, 'sad')
 surprise_path = os.path.join(ck_path, 'surprise')
-contempt_path = os.path.join(ck_path, 'contempt')
+contempt_path = os.path.join(ck_path, 'neutral')
 
 # # Creat the list to store the data and label information
 data_x = []
