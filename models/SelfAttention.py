@@ -29,11 +29,11 @@ class SelfAttentionBlock(nn.Module):
         return out
 
 
-class BasicBlock_SelfAttention(nn.Module):
+class SelfBlock(nn.Module):
     expansion = 1
 
     def __init__(self, in_channels, out_channels, stride=1):
-        super(BasicBlock_SelfAttention, self).__init__()
+        super(SelfBlock, self).__init__()
         self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=stride, padding=1, bias=False)
         self.bn1 = nn.BatchNorm2d(out_channels)
         self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
@@ -57,4 +57,4 @@ class BasicBlock_SelfAttention(nn.Module):
 
 
 def resnet101_self_attention(num_classes):
-    return ResNet101(BasicBlock_SelfAttention, [3, 4, 23, 3], num_classes)
+    return ResNet101(SelfBlock, [3, 4, 23, 3], num_classes)
